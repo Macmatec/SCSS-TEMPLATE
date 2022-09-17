@@ -1,4 +1,7 @@
 @use 'abstracts/colors' as col;
+@use 'abstracts/fonts' as fon;
+@use 'abstracts/mixins' as mix;
+@use 'layout/breakpoints' as bre;
 
 :root {
 
@@ -9,6 +12,35 @@
         @each $shade,
         $value in $shades {
             --clr-#{$color}-#{$shade}: #{$value};
+        }
+    }
+
+    //Font Weight Variables
+    @each $weight,
+    $value in fon.$type-weight {
+        --fw-#{$weight}: #{$value};
+    }
+
+
+    //Font Size Variables
+    @each $screen,
+    $sizes in fon.$type-scale {
+        @if $screen ==small {
+
+            @each $size,
+            $value in $sizes {
+                --fs-#{$size}: #{$value};
+            }
+        }
+
+        @else {
+            @include mix.mq(bre.$sm-devices) {
+
+                @each $size,
+                $value in $sizes {
+                    --fs-#{$size}: #{$value};
+                }
+            }
         }
     }
 }
