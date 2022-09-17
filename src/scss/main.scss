@@ -1,0 +1,30 @@
+@use 'abstracts/colors' as col;
+
+:root {
+
+    //Create color variables
+    @each $color,
+    $shades in col.$colors {
+
+        @each $shade,
+        $value in $shades {
+            --clr-#{$color}-#{$shade}: #{$value};
+        }
+    }
+}
+
+//Color classes
+@each $color,
+$shades in col.$colors {
+
+    @each $shade,
+    $value in $shades {
+        .clr-#{$color}-#{$shade} {
+            color: #{$value};
+        }
+
+        .bg-clr-#{$color}-#{$shade} {
+            background-color: #{$value};
+        }
+    }
+}
