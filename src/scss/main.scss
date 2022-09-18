@@ -1,6 +1,7 @@
 @use 'abstracts/colors' as col;
 @use 'abstracts/fonts' as fon;
 @use 'abstracts/mixins' as mix;
+@use 'abstracts/spacing' as spa;
 @use 'layout/breakpoints' as bre;
 
 
@@ -155,4 +156,81 @@ $sizes in fon.$type-scale {
     font-size: var(--fs-300);
     font-weight: var(--fw-700);
     text-decoration: underline;
+}
+
+//Spacing Classes
+@each $pos,
+$space in spa.$spaces {
+    @each $side in spa.$sides {
+        @if $side ==all {
+            .pa-#{$pos} {
+                padding: #{$space} !important;
+            }
+
+            .ma-#{$pos} {
+                margin: #{$space} !important;
+            }
+        }
+
+        @if $side ==y {
+            .py-#{$pos} {
+                padding: #{$space} 0 !important;
+            }
+
+            .my-#{$pos} {
+                margin: #{$space} 0 !important;
+            }
+        }
+
+        @if $side ==x {
+            .px-#{$pos} {
+                padding: 0 #{$space} !important;
+            }
+
+            .mx-#{$pos} {
+                margin: 0 #{$space} !important;
+            }
+        }
+
+        @if $side ==t {
+            .pt-#{$pos} {
+                padding-top: #{$space} !important;
+            }
+
+            .mt-#{$pos} {
+                margin-top: #{$space} !important;
+            }
+        }
+
+        @if $side ==b {
+            .pb-#{$pos} {
+                padding-bottom: #{$space} !important;
+            }
+
+            .mb-#{$pos} {
+                margin-bottom: #{$space} !important;
+            }
+        }
+
+        @if $side ==l {
+            .pl-#{$pos} {
+                padding-left: #{$space} !important;
+            }
+
+            .ml-#{$pos} {
+                margin-left: #{$space} !important;
+            }
+        }
+
+        @if side==r {
+            .pr-#{$pos} {
+                padding-right: #{$space} !important;
+            }
+
+            .mr-#{$pos} {
+                margin-right: #{$space} !important;
+            }
+        }
+
+    }
 }
