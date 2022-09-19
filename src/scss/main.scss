@@ -1,8 +1,9 @@
 @use 'abstracts/colors' as col;
 @use 'abstracts/fonts' as fon;
 @use 'abstracts/mixins' as mix;
-@use 'abstracts/spacing' as spa;
-@use 'layout/breakpoints' as bre;
+@use 'abstracts/spacing' as sp;
+@use 'layout/breakpoints' as br;
+@use 'layout/grid' as gr;
 
 
 //Items to go within the root element
@@ -37,7 +38,7 @@
         }
 
         @else {
-            @include mix.mq(bre.$sm-devices) {
+            @include mix.mq(br.$sm-devices) {
 
                 @each $size,
                 $value in $sizes {
@@ -78,7 +79,7 @@ $sizes in fon.$type-scale {
     }
 
     @else {
-        @include mix.mq(bre.$sm-devices) {
+        @include mix.mq(br.$sm-devices) {
 
             @each $size,
             $value in $sizes {
@@ -160,8 +161,8 @@ $sizes in fon.$type-scale {
 
 //Spacing Classes
 @each $pos,
-$space in spa.$spaces {
-    @each $side in spa.$sides {
+$space in sp.$spaces {
+    @each $side in sp.$sides {
         @if $side ==all {
             .pa-#{$pos} {
                 padding: #{$space} !important;
@@ -232,5 +233,21 @@ $space in spa.$spaces {
             }
         }
 
+    }
+}
+
+//Grid System Implementation
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@for $i from 1 through gr.$columns {
+    .col-#{$i} {
+        flex: 0 0 calc(100% / (gr.$columns / $i));
+    }
+
+    .col-offset-#{$i} {
+        margin-left: calc(100% / (gr.$columns / $i));
     }
 }
