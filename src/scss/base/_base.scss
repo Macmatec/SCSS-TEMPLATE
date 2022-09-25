@@ -44,10 +44,16 @@ a:not([class]) {
     text-decoration-skip-ink: auto;
 }
 
-/* Make images easier to work with */
+/* Make media easier to work with */
+audio,
+canvas,
+embed,
+iframe,
 img,
+object,
 picture,
-svg {
+svg,
+video {
     max-width: 100%;
     display: block;
 }
