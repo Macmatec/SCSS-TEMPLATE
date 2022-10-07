@@ -329,3 +329,16 @@ $prop in ut.$vid_options {
 
 
 }
+
+//Overscroll
+@each $prop in ut.$overscroll_options {
+    .overscroll-#{$prop} {
+        overscroll-behavior: #{$prop};
+    }
+
+    @each $dim in ut.$dim {
+        .overscroll-#{$dim}-#{$prop} {
+            overscroll-behavior-#{$dim}: #{$prop};
+        }
+    }
+}

@@ -53,6 +53,13 @@ $overflow_options: (
     scroll
 );
 
+//Overscroll
+$overscroll_options: (
+    auto,
+    contain,
+    none
+);
+
 // Video Sizing 
 $square: unquote("1 / 1"
     );
