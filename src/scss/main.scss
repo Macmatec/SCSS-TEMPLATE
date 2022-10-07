@@ -342,3 +342,10 @@ $prop in ut.$vid_options {
         }
     }
 }
+
+//Positions
+@each $prop in ut.$position_options {
+    .#{$prop} {
+        position: #{$prop};
+    }
+}

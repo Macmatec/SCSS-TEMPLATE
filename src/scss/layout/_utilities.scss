@@ -60,6 +60,15 @@ $overscroll_options: (
     none
 );
 
+//Positions
+$position_options: (
+    static,
+    fixed,
+    absolute,
+    relative,
+    sticky
+);
+
 // Video Sizing 
 $square: unquote("1 / 1"
     );
