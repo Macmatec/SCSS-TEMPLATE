@@ -293,10 +293,16 @@ $prop in ut.$vid_options {
 }
 
 // Box Sizing
-@each $util,
-$prop in ut.$bs_options {
+@each $prop in ut.$bs_options {
 
-    .box-#{$util} {
+    .#{$prop} {
         box-sizing: #{$prop};
+    }
+}
+
+//Display
+@each $prop in ut.$disp_options {
+    .#{$prop} {
+        display: #{$prop};
     }
 }

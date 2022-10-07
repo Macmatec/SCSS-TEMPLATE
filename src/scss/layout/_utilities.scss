@@ -1,12 +1,37 @@
 //Box sizing
 
 $bs_options: (
-    border: border-box,
-    content: content-box
+    border-box,
+    content-box
 );
 
-// Video Sizing 
+//Display
+$disp_options: (
+    block,
+    inline-block,
+    inline,
+    flex,
+    inline-flex,
+    table,
+    inline-table,
+    table-caption,
+    table-cell,
+    table-column,
+    table-column-group,
+    table-footer-group,
+    table-header-group,
+    table-row-group,
+    table-row,
+    flow-root,
+    grid,
+    inline-grid,
+    contents,
+    list-item,
+    hidden
+);
 
+
+// Video Sizing 
 $square: unquote("1 / 1");
 $video: unquote("16 / 9");
 
