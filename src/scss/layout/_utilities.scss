@@ -30,6 +30,15 @@ $disp_options: (
     hidden
 );
 
+//Object Fit
+$obj_options: (
+    contain,
+    cover,
+    fill,
+    none,
+    scale-down
+);
+
 
 // Video Sizing 
 $square: unquote("1 / 1");

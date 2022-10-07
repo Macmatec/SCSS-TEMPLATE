@@ -306,3 +306,10 @@ $prop in ut.$vid_options {
         display: #{$prop};
     }
 }
+
+//Object Fit
+@each $prop in ut.$obj_options {
+    .object-#{$prop} {
+        display: #{$prop}
+    }
+}
