@@ -5,6 +5,7 @@
 @use 'base/base' as base;
 @use 'layout/breakpoints' as br;
 @use 'layout/grid' as gr;
+@use 'layout/videos' as vid;
 
 
 //Items to go within the root element
@@ -237,7 +238,8 @@ $space in sp.$spaces {
     }
 }
 
-//Grid System Implementation
+//Layout Classes
+//Row System Implementation
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -250,5 +252,14 @@ $space in sp.$spaces {
 
     .col-offset-#{$i} {
         margin-left: calc(100% / (gr.$columns / $i));
+    }
+}
+
+//Aspect Ratio Implementation
+@each $view,
+$property in vid.$options {
+
+    .aspect-#{$view} {
+        aspect-ratio: #{$property};
     }
 }
