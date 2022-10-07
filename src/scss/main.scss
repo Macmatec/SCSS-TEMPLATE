@@ -357,3 +357,10 @@ $prop in ut.$vis_options {
         visibility: #{$prop};
     }
 }
+
+//Z-Index 
+@each $prop in ut.$z-options {
+    .z-#{$prop} {
+        z-index: #{$prop};
+    }
+}
