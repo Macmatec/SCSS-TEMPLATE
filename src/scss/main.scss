@@ -349,3 +349,11 @@ $prop in ut.$vid_options {
         position: #{$prop};
     }
 }
+
+//Visibilty
+@each $class,
+$prop in ut.$vis_options {
+    .#{$class} {
+        visibility: #{$prop};
+    }
+}
