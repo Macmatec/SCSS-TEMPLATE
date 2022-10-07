@@ -313,3 +313,19 @@ $prop in ut.$vid_options {
         display: #{$prop}
     }
 }
+
+//Overflow
+@each $prop in ut.$overflow_options {
+
+    .overflow-#{$prop} {
+        overflow: #{$prop};
+    }
+
+    @each $dim in ut.$dim {
+        .overflow-#{$dim}-#{$prop} {
+            overflow-#{$dim}: #{$prop};
+        }
+    }
+
+
+}

@@ -39,9 +39,23 @@ $obj_options: (
     scale-down
 );
 
+//Overflow
+$dim: (
+    x,
+    y
+);
+
+$overflow_options: (
+    auto,
+    hidden,
+    clip,
+    visible,
+    scroll
+);
 
 // Video Sizing 
-$square: unquote("1 / 1");
+$square: unquote("1 / 1"
+    );
 $video: unquote("16 / 9");
 
 $vid_options: (
