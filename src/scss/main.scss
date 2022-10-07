@@ -40,7 +40,7 @@
         }
 
         @else {
-            @include mix.mq(br.$sm-devices) {
+            @include mix.mq(br.$sm) {
 
                 @each $size,
                 $value in $sizes {
@@ -81,7 +81,7 @@ $sizes in fon.$type-scale {
     }
 
     @else {
-        @include mix.mq(br.$sm-devices) {
+        @include mix.mq(br.$sm) {
 
             @each $size,
             $value in $sizes {
@@ -239,6 +239,34 @@ $space in sp.$spaces {
 }
 
 //Layout Classes
+
+//Container
+.container {
+
+    width: 100%;
+
+    @include mix.mq(br.$xl2) {
+        max-width: br.$xl2;
+    }
+
+    @include mix.mq(br.$xl) {
+        max-width: br.$xl;
+    }
+
+    @include mix.mq(br.$lg) {
+        max-width: br.$lg;
+    }
+
+    @include mix.mq(br.$md) {
+        max-width: br.$md;
+    }
+
+    @include mix.mq(br.$sm) {
+        max-width: br.$sm;
+    }
+}
+
+
 //Row System Implementation
 .row {
     display: flex;
