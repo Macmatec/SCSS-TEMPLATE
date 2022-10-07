@@ -5,7 +5,7 @@
 @use 'base/base' as base;
 @use 'layout/breakpoints' as br;
 @use 'layout/grid' as gr;
-@use 'layout/videos' as vid;
+@use 'layout/utilities' as ut;
 
 
 //Items to go within the root element
@@ -285,9 +285,18 @@ $space in sp.$spaces {
 
 //Aspect Ratio Implementation
 @each $view,
-$property in vid.$options {
+$prop in ut.$vid_options {
 
     .aspect-#{$view} {
-        aspect-ratio: #{$property};
+        aspect-ratio: #{$prop};
+    }
+}
+
+// Box Sizing
+@each $util,
+$prop in ut.$bs_options {
+
+    .box-#{$util} {
+        box-sizing: #{$prop};
     }
 }

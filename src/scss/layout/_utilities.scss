@@ -1,0 +1,17 @@
+//Box sizing
+
+$bs_options: (
+    border: border-box,
+    content: content-box
+);
+
+// Video Sizing 
+
+$square: unquote("1 / 1");
+$video: unquote("16 / 9");
+
+$vid_options: (
+    auto: auto,
+    square: $square,
+    video: $video
+);
