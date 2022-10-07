@@ -5,7 +5,7 @@
 @use 'base/base' as base;
 @use 'layout/breakpoints' as br;
 @use 'layout/grid' as gr;
-@use 'layout/videos' as vid;
+@use 'layout/utilities' as ut;
 
 
 //Items to go within the root element
@@ -40,7 +40,7 @@
         }
 
         @else {
-            @include mix.mq(br.$sm-devices) {
+            @include mix.mq(br.$sm) {
 
                 @each $size,
                 $value in $sizes {
@@ -81,7 +81,7 @@ $sizes in fon.$type-scale {
     }
 
     @else {
-        @include mix.mq(br.$sm-devices) {
+        @include mix.mq(br.$sm) {
 
             @each $size,
             $value in $sizes {
@@ -239,6 +239,34 @@ $space in sp.$spaces {
 }
 
 //Layout Classes
+
+//Container
+.container {
+
+    width: 100%;
+
+    @include mix.mq(br.$xl2) {
+        max-width: br.$xl2;
+    }
+
+    @include mix.mq(br.$xl) {
+        max-width: br.$xl;
+    }
+
+    @include mix.mq(br.$lg) {
+        max-width: br.$lg;
+    }
+
+    @include mix.mq(br.$md) {
+        max-width: br.$md;
+    }
+
+    @include mix.mq(br.$sm) {
+        max-width: br.$sm;
+    }
+}
+
+
 //Row System Implementation
 .row {
     display: flex;
@@ -257,9 +285,82 @@ $space in sp.$spaces {
 
 //Aspect Ratio Implementation
 @each $view,
-$property in vid.$options {
+$prop in ut.$vid_options {
 
     .aspect-#{$view} {
-        aspect-ratio: #{$property};
+        aspect-ratio: #{$prop};
+    }
+}
+
+// Box Sizing
+@each $prop in ut.$bs_options {
+
+    .#{$prop} {
+        box-sizing: #{$prop};
+    }
+}
+
+//Display
+@each $prop in ut.$disp_options {
+    .#{$prop} {
+        display: #{$prop};
+    }
+}
+
+//Object Fit
+@each $prop in ut.$obj_options {
+    .object-#{$prop} {
+        display: #{$prop}
+    }
+}
+
+//Overflow
+@each $prop in ut.$overflow_options {
+
+    .overflow-#{$prop} {
+        overflow: #{$prop};
+    }
+
+    @each $dim in ut.$dim {
+        .overflow-#{$dim}-#{$prop} {
+            overflow-#{$dim}: #{$prop};
+        }
+    }
+
+
+}
+
+//Overscroll
+@each $prop in ut.$overscroll_options {
+    .overscroll-#{$prop} {
+        overscroll-behavior: #{$prop};
+    }
+
+    @each $dim in ut.$dim {
+        .overscroll-#{$dim}-#{$prop} {
+            overscroll-behavior-#{$dim}: #{$prop};
+        }
+    }
+}
+
+//Positions
+@each $prop in ut.$position_options {
+    .#{$prop} {
+        position: #{$prop};
+    }
+}
+
+//Visibilty
+@each $class,
+$prop in ut.$vis_options {
+    .#{$class} {
+        visibility: #{$prop};
+    }
+}
+
+//Z-Index 
+@each $prop in ut.$z-options {
+    .z-#{$prop} {
+        z-index: #{$prop};
     }
 }

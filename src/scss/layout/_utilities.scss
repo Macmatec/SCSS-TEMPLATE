@@ -1,0 +1,98 @@
+//Box sizing
+
+$bs_options: (
+    border-box,
+    content-box
+);
+
+//Display
+$disp_options: (
+    block,
+    inline-block,
+    inline,
+    flex,
+    inline-flex,
+    table,
+    inline-table,
+    table-caption,
+    table-cell,
+    table-column,
+    table-column-group,
+    table-footer-group,
+    table-header-group,
+    table-row-group,
+    table-row,
+    flow-root,
+    grid,
+    inline-grid,
+    contents,
+    list-item,
+    hidden
+);
+
+//Object Fit
+$obj_options: (
+    contain,
+    cover,
+    fill,
+    none,
+    scale-down
+);
+
+//Overflow
+$dim: (
+    x,
+    y
+);
+
+$overflow_options: (
+    auto,
+    hidden,
+    clip,
+    visible,
+    scroll
+);
+
+//Overscroll
+$overscroll_options: (
+    auto,
+    contain,
+    none
+);
+
+//Positions
+$position_options: (
+    static,
+    fixed,
+    absolute,
+    relative,
+    sticky
+);
+
+// Video Sizing 
+$square: unquote("1 / 1"
+    );
+$video: unquote("16 / 9");
+
+$vid_options: (
+    auto: auto,
+    square: $square,
+    video: $video
+);
+
+//Visibilty
+$vis_options: (
+    visible: visible,
+    invisible: hidden
+);
+
+//Z-index
+$z_options: (
+    0,
+    10,
+    20,
+    30,
+    40,
+    50,
+    auto
+);
